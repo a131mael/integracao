@@ -19,7 +19,7 @@ import br.com.grupobst.services.ServicesLocator;
 public class EnviadorTitulosCartorio {
 
 	private String usuario = "favodemel_ws179";
-	private String senha = "ws_awnv3375";
+	private String senha = "Favodemel_ws179";
 	/*
 	 * Usuarios senha de homologacao
 	 * private String usuario = "favodemel_WS179"; private String senha =
@@ -75,6 +75,9 @@ public class EnviadorTitulosCartorio {
 		EnviarTituloResponse[] resposta = null;
 		Parcer parse = new Parcer();
 		EnviarTituloRequest[] tituloProtestar = parse.getTituloProtestar(contrato);
+		
+		
+		
 		resposta = protestarInterface.enviarTitulo(token,tituloProtestar);
 		if("WS_ERR_002".equalsIgnoreCase(resposta[0].getResposta().getCodigo())) {
 			autenticar(usuario, senha);

@@ -1,9 +1,12 @@
 package br.com.aaf.integracao.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import br.com.aaf.integracao.model.Boleto;
 import br.com.aaf.integracao.model.ContratoAluno;
 import br.com.aaf.integracao.repository.ContratoAlunoRepository;
 
@@ -16,7 +19,11 @@ public class ContratoAlunoService {
 	
 	@Transactional
 	public ContratoAluno getContrato(String numero) {
-		return contratoAlunoRepository.getContratoAlunoNative(numero);
+		ContratoAluno contrato = contratoAlunoRepository.getContratoAlunoNative(numero);
+		List<Boleto> boletos = contratoAlunoRepository.findBoletosByContratoId(contrato.getId());
+		contrato.getBoletos().size();
+		contrato.setBoletos(boletos);
+		return contrato;
 	}
 
 }

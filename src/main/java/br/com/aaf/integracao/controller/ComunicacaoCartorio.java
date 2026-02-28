@@ -24,7 +24,7 @@ public class ComunicacaoCartorio {
 	@Autowired
 	ContratoAlunoService contratoAlunoService;
 
-	@Transactional
+	
 	@GetMapping("/enviarContratoProtesto")
 	public ResponseEntity<RetornoEnvioContratoDTO> getalunosAvaliacaoes(@RequestParam(required = true) String idContrato) {
 		

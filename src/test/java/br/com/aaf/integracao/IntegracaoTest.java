@@ -119,7 +119,7 @@ class IntegracaoTest {
 	
 	private DividaEnviar getDivida(int numeroParcelasContrato) throws IOException {
 		DividaEnviar divida = new DividaEnviar();
-		divida.setEspecie("CT");
+		divida.setEspecie("CTI");
 		divida.setNossoNumero("12345"); // Id do contrato
 		divida.setValor("200.00"); // valor total do contrato é .
 		divida.setSaldo("100"); // valorRestanteDaDivida

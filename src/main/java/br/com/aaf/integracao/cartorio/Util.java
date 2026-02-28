@@ -12,11 +12,11 @@ public class Util {
 	private static String pasta = "contratos";
 	
 	public static String PATH_CONTRATOS_ADONAI = File.separator+"home"+File.separator+usuario + File.separator + pasta + File.separator +PROJETO_ADONAI + File.separator ;
-	//public static String PATH_CONTRATOS_FAVO = File.separator+"home"+File.separator+usuario + File.separator + pasta + File.separator +PROJETO_FAVO + File.separator ;
+	public static String PATH_CONTRATOS_FAVO = File.separator+"home"+File.separator+usuario + File.separator + pasta + File.separator +PROJETO_FAVO + File.separator ;
 	
 	//TODO TESTE LOCAL
 	
-	public static String PATH_CONTRATOS_FAVO = "C:\\Users\\Abimael Fidencio\\Pictures\\Scan\\";
+	//public static String PATH_CONTRATOS_FAVO = "C:\\Users\\Abimael Fidencio\\Pictures\\Scan\\";
 	 
 	
 }

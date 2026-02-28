@@ -149,6 +149,7 @@ public class ContratoAluno implements Serializable,Comparable<ContratoAluno> {
     private Boolean enviadoPorEmailProtesto;
 	
 	@Lob
+	@Type(type = "org.hibernate.type.TextType") // Importante para mapear corretamente para TEXT no PostgreSQL
 	private String comentario;
 	
 	@Lob

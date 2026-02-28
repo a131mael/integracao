@@ -12,14 +12,18 @@ public class AutenticarResponse  implements java.io.Serializable {
 
     private java.lang.String token;
 
+    private java.lang.String validade;
+    
+    
     public AutenticarResponse() {
     }
 
     public AutenticarResponse(
            br.com.grupobst.services.StatusResponse resposta,
-           java.lang.String token) {
+           java.lang.String token,java.lang.String validade) {
            this.resposta = resposta;
            this.token = token;
+           this.validade = validade;
     }
 
 
@@ -52,6 +56,11 @@ public class AutenticarResponse  implements java.io.Serializable {
         return token;
     }
 
+    
+    public java.lang.String getValidade() {
+        return validade;
+    }
+
 
     /**
      * Sets the token value for this AutenticarResponse.
@@ -61,7 +70,11 @@ public class AutenticarResponse  implements java.io.Serializable {
     public void setToken(java.lang.String token) {
         this.token = token;
     }
-
+    
+    public void setValidade(java.lang.String validade) {
+        this.validade = validade;
+    }
+    
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof AutenticarResponse)) return false;
@@ -121,6 +134,15 @@ public class AutenticarResponse  implements java.io.Serializable {
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
+        
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("validade");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "validade"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        
     }
 
     /**

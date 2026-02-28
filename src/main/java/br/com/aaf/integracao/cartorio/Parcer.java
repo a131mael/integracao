@@ -32,7 +32,14 @@ public class Parcer {
 	
 	public EnviarTituloRequest[] getTituloProtestar(ContratoAluno contrato) throws IOException {
 		EnviarTituloRequest tituloEnviar = new EnviarTituloRequest();
-		tituloEnviar.setAlteracao("N");
+		
+		if(contrato.getComentarioWebService() != null) {
+			tituloEnviar.setAlteracao("S");
+		}else {
+			tituloEnviar.setAlteracao("N");
+		}
+	
+		
 		tituloEnviar.setDevedor(getDevedorList(contrato));
 		tituloEnviar.setDivida(getDivida(contrato));
 		EnviarTituloRequest[] titulos = new EnviarTituloRequest[1];
@@ -102,17 +109,17 @@ public class Parcer {
 		DividaEnviar divida = new DividaEnviar();
 		divida.setNumero(contrato.getNumero());
 		divida.setFinsFalimentares("N");
-		divida.setDeclaracaoPortador("T");
+		divida.setDeclaracaoPortador("D");
 		//divida.setPracaManual("8233");
 		
-		divida.setEspecie("CT");
+		divida.setEspecie("CTI");
 		divida.setNossoNumero(String.valueOf(contrato.getId()));
 
 		String total = ((contrato.getNumeroParcelas() * contrato.getValorMensal()) + "");
 		divida.setValor(total);
 		divida.setSaldo(getTotalAberto(contrato)); // valorRestanteDaDivida
 		divida.setTipoEndosso("B"); // TODO VERIFICAR O QUE È
-		divida.setAceite("S");
+		divida.setAceite("N");
 		divida.setEmissao(formatador.format(contrato.getDataCriacaoContrato())); // data emissao contrato DD/MM/AAAA
 		//divida.setVencimento("99999999");
 		
